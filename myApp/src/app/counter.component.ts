@@ -44,5 +44,4 @@ export class CounterComponent implements OnInit {
             return false;
           }
 
-
 }

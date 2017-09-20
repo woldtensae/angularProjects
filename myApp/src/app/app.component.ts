@@ -18,6 +18,7 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
+  
   counterValue = 5;
   value=5;
   clickedWasPlaced(upComingValue:number){
