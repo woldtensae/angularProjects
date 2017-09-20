@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { DataComponent } from './data.component';
 import { UpperDirective } from './upper.directive';
 import { MyvisibilityDirective } from './myvisibility.directive';
+import { MycolorDirective } from './mycolor.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataComponent,
     UpperDirective,
-    MyvisibilityDirective
+    MyvisibilityDirective,
+    MycolorDirective
   ],
   imports: [
     BrowserModule
