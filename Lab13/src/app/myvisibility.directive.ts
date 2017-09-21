@@ -6,12 +6,21 @@ import { Directive, ElementRef, Renderer, HostListener, HostBinding, Input } fro
 })
 
 export class MyvisibilityDirective {
-
+  @Input() appMyVisibility: boolean;
+  
         constructor(private e: ElementRef, private r: Renderer) { 
           r.setElementStyle(e.nativeElement, 'display', 'inline');
         }
 
-        @HostListener('mouseenter') foo(){ 
-          this.e.nativeElement.style.display = 'none'}
-        @HostListener('mouseleave') bar(){ this.e.nativeElement.style.display = 'inline'}
+        ngOnInit(){
+          if(this.appMyVisibility)
+              this.e.nativeElement.style.display = 'none'; 
+           else
+               this.e.nativeElement.style.display = 'inline';
+         
+        }
+
+     
+         
+      
 }

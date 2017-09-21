@@ -1,0 +1,6 @@
+
+      <table>
+        <tr *ngFor = "let fullInfo of data">
+          <td> <a [routerLink] = "['studentProfile', fullInfo.id]">{{fullInfo["name"]}}</a></td>
+        </tr>
+      </table>
