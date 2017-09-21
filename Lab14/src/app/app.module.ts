@@ -8,12 +8,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { DbService} from './db/db.service';
 import { StudentProfileComponent } from './student-profile.component';
+import { MyGuardService } from './my-guard.service'
 
 const MY_ROUTES: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'student', component: StudentComponent},
-  {path: 'student/studentProfile/:id', component: StudentProfileComponent}
+  {path: 'student/studentProfile/:id', component: StudentProfileComponent, canActivate:[MyGuardService]}
 ]
 
 @NgModule({
@@ -24,9 +25,9 @@ const MY_ROUTES: Routes = [
     StudentProfileComponent
   ],
   imports: [
-    BrowserModule, RouterModule.forRoot(MY_ROUTES)
+    BrowserModule, RouterModule.forRoot(MY_ROUTES), 
   ],
-  providers: [DbService],
+  providers: [DbService, MyGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
