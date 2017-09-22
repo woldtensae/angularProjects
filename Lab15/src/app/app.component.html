@@ -1,0 +1,21 @@
+
+
+<form [formGroup] = "myForm" (ngSubmit) = "onSubmit()">
+    
+
+    <label for="fullname">Fullname:</label>
+    <input type="text" formControlName="fullname"><br><br>
+    <div *ngIf ="!myForm.controls['fullname'].valid">Invalid fullname</div>
+
+
+    <label for="email">Email:</label>
+    <input type="text" formControlName="email"><br><br>
+    <div *ngIf ="!myForm.controls['email'].valid">Invalid email</div>
+    <label for="post">Post:</label>
+    <textarea  cols="30" rows="10"  formControlName="post"></textarea><br><br>
+    <div *ngIf ="!myForm.controls['post'].valid">Invalid post</div>
+    
+    <button type="submit"  [disabled] = "!myForm.valid" >Submit</button>
+    <button type="button" (click) = "onFetchData()">Get Data</button>
+</form>
+
