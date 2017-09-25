@@ -24,9 +24,11 @@ export class AppComponent {
   }
 
   onFetchData(){
-    this.dataFetcher.getData().subscribe(response=> this.myForm.get('post').setValue(JSON.stringify(response)));   
-    
-     
-    console.log(this.dataFetcher.getData());
+    this.dataFetcher.getUserData().subscribe(response=> {
+      console.log(response.json());
+      this.myForm.get('fullname').setValue(response.json()['name']);
+      this.myForm.get('email').setValue(response.json()['email']);
+    });        
   }
+
 }

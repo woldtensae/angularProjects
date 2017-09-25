@@ -2,6 +2,7 @@
 
 <form [formGroup] = "myForm" (ngSubmit) = "onSubmit()">
     
+  <div><input type="text" #myInput (keyup)='0'>{{myInput.value}}</div>
 
     <label for="fullname">Fullname:</label>
     <input type="text" formControlName="fullname"><br><br>

@@ -6,8 +6,11 @@ export class GetDataService {
 
   constructor(private http: Http) { }
 
-  getData(){
-    return this.http.get('http://jsonplaceholder.typicode.com/users/1');
+  getPostData(){
+    return this.http.get('http://jsonplaceholder.typicode.com/posts?userId=1');
   }
 
+  getUserData(){
+    return this.http.get('http://jsonplaceholder.typicode.com/users/1');
+  }
 }
